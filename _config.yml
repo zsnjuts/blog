@@ -31,6 +31,7 @@ github_username: zsnjuts
 theme: jekyll-theme-yat
 plugins:
   - jekyll-feed
+  - jekyll-admin
 
 header_pages: [categories.md, tags.md, archives.md]
 
