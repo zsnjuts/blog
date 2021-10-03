@@ -33,7 +33,24 @@ plugins:
   - jekyll-feed
   - jekyll-admin
 
+# 用于yat主题
 header_pages: [categories.md, tags.md, archives.md]
+
+# 用于Netlify CMS
+collections:
+  blog:
+    name: 'blog'
+    label: 'Blog'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
 # Exclude from processing.
 # The following items will not be processed, by default.
