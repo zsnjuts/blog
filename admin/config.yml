@@ -1,10 +1,13 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: 'assets'
+media_folder: 'assets/uploads'
+site_url: https://blog.zsnju.cn
+publish_mode: editorial_workflow
+show_preview_links: true
 collections:
   - name: 'posts'
-    label: 'Posts'
+    label: 'Post'
     folder: '_posts/'
     create: true  # 允许使用Netlify CMS创建新的文章
     preview_path: "blog/{{year}}/{{month}}/{{slug}}"  # 预览路径
