@@ -12,11 +12,12 @@ collections:
     create: true  # 允许使用Netlify CMS创建新的文章
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "{{fields.category}}/{{year}}/{{month}}/{{day}}/{{title}}.html"  # 预览路径
-    preview_path_date_field: "updated_on"  # 获取预览路径中日期的field名称
+    preview_path_date_field: "created_on"  # 预览路径中的日期要使用文件名中的日期，即文件创建的日期
     fields: # 这里这些字段对应到你写文章的 markdown 上方的一些文章属性 widget 的配置可以参考官方文档的 widget 部分
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Update Date", name: "updated_on", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss ZZ"}
+      - {label: "Create Time", name: "created_on", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ"}
+      - {label: "Update Time", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ"}  # 更新时间，Jekyll中要用
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
