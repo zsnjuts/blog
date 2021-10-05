@@ -1,12 +1,16 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: 'assets'
+media_folder: 'assets/uploads'
+site_url: https://blog.zsnju.cn
+publish_mode: editorial_workflow
+show_preview_links: true
 collections:
   - name: 'posts'
-    label: 'Posts'
+    label: 'Post'
     folder: '_posts/'
     create: true  # 允许使用Netlify CMS创建新的文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "blog/{{year}}/{{month}}/{{slug}}"  # 预览路径
     preview_path_date_field: "updated_on"  # 获取预览路径中日期的field名称
     fields: # 这里这些字段对应到你写文章的 markdown 上方的一些文章属性 widget 的配置可以参考官方文档的 widget 部分
@@ -14,5 +18,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Update Date", name: "updated_on", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
       - {label: "Categories", name: "categories", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
